@@ -1,0 +1,222 @@
+interface MycelialDBRProps {
+  onNavigate: (page: string) => void;
+}
+
+const EXTENSIONS = [
+  {
+    n: "5.1",
+    phase: "Phase 1",
+    name: "Non-Scalable Knowledge Audit",
+    accent: "amber",
+    body: "A fourth stream in analysis and exploration — explicit methods for capturing what standard needs analysis misses: tacit procedural knowledge, relational knowledge, oral and practice-embedded knowledge, marginal knowledge held at the network edges.",
+    methods: "Walkthrough interviews, artefact-based discussion, peer-to-peer conversations not mediated by the researcher. Paired with an invisible labour inventory.",
+    changes: "The problem statement. A problem statement derived from Streams 1–3 only describes what is visible. Stream 4 typically reveals that the problem as officially named is not the problem as actually experienced — and that the proposed intervention may destroy something that is working precisely because it is not working in the documented sense.",
+  },
+  {
+    n: "5.2",
+    phase: "Phase 2",
+    name: "Epistemic Conjecture",
+    accent: "terracotta",
+    body: "A fifth component to the conjecture map — making explicit what forms of knowledge the design needs to accommodate, and which design features risk extracting knowledge that should remain in context.",
+    methods: "Ask: are any conjecture map assumptions only true if all participants operate in the same epistemic register? What forms of knowledge does this design need to be able to absorb?",
+    changes: "Makes visible the epistemic assumptions embedded in design decisions before those decisions are made — rather than discovering them in Phase 4 when redesign is costly.",
+  },
+  {
+    n: "5.3",
+    phase: "Phase 3",
+    name: "Productive Insufficiency",
+    accent: "green",
+    body: "The deliberate design of generative gaps — principled restraint rather than full scaffolding. Matsutake grows only in the most deeply disturbed forests. The generative encounter happens in scarcity and disturbance, not optimised conditions.",
+    methods: "Critical distinction: difficulty in the thing being learned (generative — belongs in the design) vs. difficulty in surrounding conditions (obstructive — should be eliminated). This requires more careful design thinking than full scaffolding.",
+    changes: "The design philosophy. Standard DBR iterates toward a more complete, more scaffolded intervention. Mycelial DBR holds open whether that direction of travel is right — whether some of what gets designed out is generative rather than deficient.",
+  },
+  {
+    n: "5.4",
+    phase: "Phase 4",
+    name: "Underground Evaluation",
+    accent: "amber",
+    body: "Evaluation of what is happening beneath the visible surface of the intervention — the relational, slow, and invisible processes that either support or undermine what standard evaluation instruments see.",
+    methods: "Extended informal conversations with participants after formal evaluation moments; facilitator journals including what was felt but not said; longitudinal follow-up; invisible labour accounting.",
+    changes: "The evidence base for design decisions. Iteration guided only by visible outcome data will systematically optimise for what is measured and against what is not. Underground evaluation catches cases where visible learning is improving while the relational substrate is degrading.",
+  },
+  {
+    n: "5.5",
+    phase: "Phase 5",
+    name: "Partial Translation",
+    accent: "terracotta",
+    body: "A three-part theory articulation practice: (1) produce the theory in standard form; (2) name the translation explicitly — 'this is what the theory cannot carry'; (3) preserve the particular alongside the scalable output, in a richer, less portable form.",
+    methods: "Alongside every formal theoretical output, produce a parallel account: what was present in the research that the theory abstracts away from? Name the conditions of validity that cannot be designed in.",
+    changes: "The honesty and usefulness of the theoretical output. A theory that names its own conditions and limits is more useful to practitioners than one that claims broader applicability than it has.",
+  },
+];
+
+const QUALITY = [
+  { criterion: "Validity", standard: "Do the theoretical claims follow from the data?", mycelial: "Do the theoretical claims account for what the data collection could not see?" },
+  { criterion: "Transferability", standard: "Can the design framework be applied in similar contexts?", mycelial: "Does the framework name the conditions it requires — including those that cannot be designed in?" },
+  { criterion: "Rigour of analysis", standard: "Is the conjecture map revised systematically across iterations?", mycelial: "Is the epistemic conjecture revised? Are design failures documented as substrates, not only as errors?" },
+  { criterion: "Ethical practice", standard: "Informed consent; participant wellbeing; data protection", mycelial: "Return pathway: does what was generated by the learning system return to nourish it, or is it extracted for academic purposes?" },
+  { criterion: "Completeness", standard: "Have all expected theory types been produced?", mycelial: "Has partial translation been practised: is there a parallel account of what the theory could not carry?" },
+];
+
+const ACCENT = {
+  amber:      { card: "bg-amber-50 border-amber-800/20",    bar: "bg-amber-700",   num: "text-amber-700",   phase: "bg-amber-100 text-amber-800" },
+  terracotta: { card: "bg-orange-50 border-orange-800/20",  bar: "bg-orange-700",  num: "text-orange-700",  phase: "bg-orange-100 text-orange-800" },
+  green:      { card: "bg-green-50 border-green-800/20",    bar: "bg-green-700",   num: "text-green-700",   phase: "bg-green-100 text-green-800" },
+};
+
+export default function MycelialDBR({ onNavigate }: MycelialDBRProps) {
+  return (
+    <div className="min-h-screen text-stone-800" style={{ fontFamily: "'Source Serif 4', Georgia, serif", backgroundColor: "#f5ede0" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&display=swap');
+        .font-display { font-family: 'Playfair Display', Georgia, serif; }
+      `}</style>
+
+      <nav className="sticky top-0 bg-amber-50/90 backdrop-blur-md border-b border-amber-900/20 z-40 px-6 md:px-12 py-4">
+        <div className="max-w-4xl mx-auto flex justify-between items-center">
+          <button onClick={() => onNavigate('mycelial')} className="text-sm text-stone-500 hover:text-amber-800 transition-colors font-sans">
+            ← Mycelial Learning
+          </button>
+          <button onClick={() => onNavigate('dbr')} className="text-sm border border-amber-800/30 text-amber-800 hover:bg-amber-100 px-4 py-1.5 rounded transition-colors font-sans">
+            DBR Framework →
+          </button>
+        </div>
+      </nav>
+
+      <header className="border-b border-amber-900/20 px-6 md:px-12 py-12">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-amber-800/70 mb-3 font-sans">
+            Article 05 · Mycelial Learning Framework
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl text-stone-800 leading-tight mb-4">
+            DBR as Method in<br />
+            <em className="text-amber-800">Mycelial Learning</em>
+          </h1>
+          <p className="text-stone-600 text-base leading-relaxed max-w-2xl mb-6">
+            Design-based research has a structural epistemological blind spot: its dual-output requirement demands scalable knowledge from settings where the most important knowledge is non-scalable. Five extensions address DBR's specific extraction risks.
+          </p>
+          <div className="bg-amber-50 border border-amber-800/20 rounded-lg px-5 py-4 max-w-2xl">
+            <p className="text-sm font-semibold text-stone-700 font-sans mb-1">Mycelial DBR defined</p>
+            <p className="text-sm text-stone-600 leading-relaxed">
+              Not a new methodology — a principled epistemological extension of existing DBR that is consistent with DBR's own commitments, if those commitments are taken seriously. A research practice that can study what resists extraction <em>without extracting it</em>.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* Extraction problem */}
+      <section className="px-6 md:px-12 py-8 border-b border-amber-900/20">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-amber-800/70 mb-4 font-sans">The extraction problem — three structural risks</p>
+          <div className="space-y-2.5">
+            {[
+              { n: "01", risk: "Theory articulation as forced translation", body: "Edelson's three theory types all produce scalable knowledge. The translation cost is systematically unaccounted for." },
+              { n: "02", risk: "Conjecture mapping in the dominant register", body: "The conjecture map makes assumptions visible in propositional form. Tacit, relational, and practice-embedded assumptions that are equally load-bearing cannot appear. They are invisible not because they are absent but because the instrument cannot see them." },
+              { n: "03", risk: "Outcome evaluation's visibility bias", body: "Standard DBR evaluation measures what participants produce or report. Extended informal conversations after formal evaluation consistently reveal richer accounts. This is not anecdote — it is data that the evaluation design excludes." },
+            ].map(r => (
+              <div key={r.n} className="flex gap-3 items-start border-l-2 border-orange-700 pl-4">
+                <span className="text-xs font-bold text-orange-700 font-sans shrink-0 mt-0.5">{r.n}</span>
+                <div>
+                  <p className="text-sm font-semibold text-stone-700 font-sans">{r.risk}</p>
+                  <p className="text-sm text-stone-500 leading-relaxed">{r.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Five extensions */}
+      <main className="px-6 md:px-12 py-10">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-amber-800/70 mb-6 font-sans">Five extensions — mycelial DBR in practice</p>
+          <div className="space-y-5">
+            {EXTENSIONS.map((ext) => {
+              const a = ACCENT[ext.accent as keyof typeof ACCENT];
+              return (
+                <div key={ext.n} className={`rounded-xl border ${a.card} px-6 py-5`}>
+                  <div className="flex items-start gap-3 mb-3">
+                    <span className={`text-xs px-2 py-0.5 rounded font-sans font-semibold shrink-0 mt-0.5 ${a.phase}`}>{ext.phase}</span>
+                    <div>
+                      <h2 className="font-display text-lg text-stone-800">{ext.name}</h2>
+                    </div>
+                  </div>
+                  <p className="text-sm text-stone-700 leading-relaxed mb-3">{ext.body}</p>
+                  <div className="space-y-2 ml-0">
+                    <div className={`border-l-2 ${a.bar} pl-3`}>
+                      <p className="text-xs font-semibold text-stone-400 uppercase tracking-wide font-sans mb-0.5">Methods</p>
+                      <p className="text-sm text-stone-500 leading-relaxed">{ext.methods}</p>
+                    </div>
+                    <div className={`border-l-2 ${a.bar} pl-3`}>
+                      <p className="text-xs font-semibold text-stone-400 uppercase tracking-wide font-sans mb-0.5">What it changes</p>
+                      <p className="text-sm text-stone-500 leading-relaxed">{ext.changes}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </main>
+
+      {/* Quality criteria */}
+      <section className="px-6 md:px-12 py-8 border-t border-amber-900/20">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-amber-800/70 mb-4 font-sans">Quality criteria — what rigour looks like in mycelial DBR</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-stone-300">
+                  <th className="text-left py-2 pr-6 font-sans font-semibold text-stone-500 text-xs uppercase tracking-wide w-1/4">Criterion</th>
+                  <th className="text-left py-2 pr-6 font-sans font-semibold text-stone-400 text-xs uppercase tracking-wide">Standard DBR</th>
+                  <th className="text-left py-2 font-sans font-semibold text-amber-800 text-xs uppercase tracking-wide">Mycelial DBR</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-stone-200">
+                {QUALITY.map((q) => (
+                  <tr key={q.criterion}>
+                    <td className="py-2.5 pr-6 text-stone-700 font-semibold font-sans text-xs">{q.criterion}</td>
+                    <td className="py-2.5 pr-6 text-stone-400">{q.standard}</td>
+                    <td className="py-2.5 text-stone-700">{q.mycelial}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Meta-tension */}
+      <section className="px-6 md:px-12 py-8 border-t border-amber-900/20">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-orange-50 border border-orange-800/20 rounded-xl px-6 py-5 max-w-2xl">
+            <p className="text-xs font-semibold tracking-widest uppercase text-orange-800 mb-2 font-sans">The meta-tension</p>
+            <p className="text-stone-700 text-sm leading-relaxed">
+              This article is itself a scalable knowledge product describing why the most important knowledge cannot be scaled. The five extensions are abstractions — the living versions depend on relational conditions, institutional histories, and facilitation capacities this paper cannot carry. Partial translation applied to the paper itself: name the gap between articulation and practice, and place the obligation on the reader to attend to their own setting.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-12 py-8 border-t border-amber-900/20">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-amber-800/70 mb-3 font-sans">Key Sources</p>
+          <ul className="space-y-1.5 text-sm text-stone-500 font-sans">
+            <li>McKenney, S., & Reeves, T. (2019). <em>Conducting Educational Design Research</em> — process architecture; dual-output requirement; solutionism</li>
+            <li>Edelson, D. (2002). — three theory types; design research as epistemically productive</li>
+            <li>Tsing, A. (2015). <em>The Mushroom at the End of the World</em> — non-scalable knowledge; arts of noticing; third nature; disturbed landscapes</li>
+            <li>Santos, B. de S. (2014). — epistemicide; demand for legibility as mechanism of knowledge destruction</li>
+            <li>Balanzó-Guzmán, A., & Ramos-Mejía, M. (2023). — co-design as potential extraction; epistemic diversity in transitions</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer className="border-t border-amber-900/20 px-6 md:px-12 py-6">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-3">
+          <p className="text-xs text-stone-400 font-sans">Article 05 · DBR as Method in Mycelial Learning · Ferry Boschman · Lectoraat Urban Innovation, Windesheim</p>
+          <p className="text-xs text-stone-400 italic font-sans">A Decolonial Paradigm for Educational Science</p>
+        </div>
+      </footer>
+    </div>
+  );
+}

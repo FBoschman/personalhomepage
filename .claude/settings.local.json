@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(npm run *)",
+      "Bash(netstat -ano)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebSearch",
+      "WebFetch(domain:rsampod.substack.com)",
+      "WebFetch(domain:youtubetranscript.com)",
+      "WebFetch(domain:www.podscribe.ai)",
+      "WebFetch(domain:www.youtube-transcript.io)",
+      "WebFetch(domain:tubedigest.com)",
+      "WebFetch(domain:podcasts.apple.com)",
+      "WebFetch(domain:tactiq.io)",
+      "WebFetch(domain:cliff-salad-4e8.notion.site)",
+      "Bash(mv raw/avis-2007-activity-theory-conservative-praxis.md wiki/sources/)",
+      "Bash(mv raw/avis-2009-transformation-or-transformism.md wiki/sources/)",
+      "Bash(mv raw/cong-lem-2022-vygotsky-leontiev-engestrom.md wiki/sources/)",
+      "Bash(mv raw/engestrom-sannino-2010-studies-expansive-learning.md wiki/sources/)",
+      "Bash(mv raw/engestrom-sannino-2020-four-generations-activity-theory.md wiki/sources/)",
+      "Bash(mv raw/chat-depoliticisation-of-contradiction.md wiki/themes/)",
+      "Bash(mv raw/transformism-vs-transformation-activity-theory.md wiki/tensions/)",
+      "Bash(xargs wc *)",
+      "Bash(awk '$1 < 5 {print $2}')"
+    ]
+  }
+}
