@@ -215,13 +215,20 @@ function App() {
     const render = SUB_PAGES[currentPage];
     return (
       <div className="min-h-screen bg-paper">
-        <button
-          onClick={() => setCurrentPage('home')}
-          className="label fixed top-4 left-4 z-40 flex items-center gap-2 bg-ink px-3.5 py-2.5 text-paper transition-colors hover:bg-signal"
-        >
-          <ArrowLeft size={13} aria-hidden />
-          Index
-        </button>
+        <div className="flex items-center justify-between gap-4 border-b border-ink/20 px-5 py-3 md:px-8">
+          <button
+            onClick={() => setCurrentPage('home')}
+            className="label group flex items-center gap-2 text-ink transition-colors hover:text-signal"
+          >
+            <ArrowLeft
+              size={13}
+              aria-hidden
+              className="transition-transform group-hover:-translate-x-0.5"
+            />
+            Index
+          </button>
+          <span className="label text-ink-faint">Substrate</span>
+        </div>
         {currentPage === 'traditions' ? <TraditionsExplorer /> : render?.(navigate)}
       </div>
     );
@@ -244,15 +251,30 @@ function App() {
             </span>
           </a>
 
-          <nav aria-label="Sections" className="flex items-center gap-5 md:gap-8">
-            <a href="#position" className="label link-underline text-ink-soft hover:text-ink">
-              <span className="hidden md:inline">01 / </span>Position
+          <nav aria-label="Sections" className="flex items-center gap-4 md:gap-8">
+            <a
+              href="#position"
+              aria-label="Position"
+              className="label link-underline text-ink-soft hover:text-ink"
+            >
+              <span className="md:hidden">01</span>
+              <span className="hidden md:inline">01 / Position</span>
             </a>
-            <a href="#work" className="label link-underline text-ink-soft hover:text-ink">
-              <span className="hidden md:inline">02 / </span>Index
+            <a
+              href="#work"
+              aria-label="Index"
+              className="label link-underline text-ink-soft hover:text-ink"
+            >
+              <span className="md:hidden">02</span>
+              <span className="hidden md:inline">02 / Index</span>
             </a>
-            <a href="#contact" className="label link-underline text-ink-soft hover:text-ink">
-              <span className="hidden md:inline">03 / </span>Contact
+            <a
+              href="#contact"
+              aria-label="Contact"
+              className="label link-underline text-ink-soft hover:text-ink"
+            >
+              <span className="md:hidden">03</span>
+              <span className="hidden md:inline">03 / Contact</span>
             </a>
           </nav>
         </div>
@@ -268,7 +290,7 @@ function App() {
             Open for collaboration — 2026
           </p>
 
-          <h1 className="font-display text-[clamp(2.4rem,8.5vw,6.5rem)] leading-[0.88] font-extrabold tracking-[-0.04em] uppercase">
+          <h1 className="font-display text-[clamp(2rem,7.8vw,6.5rem)] leading-[0.88] font-extrabold tracking-[-0.04em] uppercase">
             Knowledge is a
             <br />
             <span className="text-signal">commons.</span>
@@ -279,7 +301,10 @@ function App() {
           <div className="mt-12 grid gap-12 border-t border-ink/15 pt-8 md:grid-cols-[1.1fr_0.9fr] md:gap-16">
             <p className="max-w-2xl text-lg leading-snug text-ink-soft md:text-xl">
               A research practice working on decolonial learning, epistemic justice and
-              sustainability transitions. Built <em className="text-ink not-italic">with</em>{' '}
+              sustainability transitions. Built{' '}
+              <em className="text-ink underline decoration-signal decoration-2 underline-offset-4 not-italic">
+                with
+              </em>{' '}
               communities — never extracted from them.
             </p>
 
@@ -296,10 +321,10 @@ function App() {
             </dl>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-3">
+          <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#work"
-              className="label group inline-flex items-center gap-2.5 bg-ink px-6 py-4 text-paper transition-colors hover:bg-signal"
+              className="label group flex w-full items-center justify-between gap-2.5 bg-ink px-6 py-4 text-paper transition-colors hover:bg-signal sm:inline-flex sm:w-auto sm:justify-start"
             >
               See the index
               <ArrowUpRight
@@ -310,7 +335,7 @@ function App() {
             </a>
             <a
               href="#contact"
-              className="label inline-flex items-center gap-2.5 border border-ink px-6 py-4 transition-colors hover:bg-ink hover:text-paper"
+              className="label flex w-full items-center gap-2.5 border border-ink px-6 py-4 transition-colors hover:bg-ink hover:text-paper sm:inline-flex sm:w-auto"
             >
               Get in touch
             </a>
@@ -407,7 +432,7 @@ function App() {
 
           <a
             href="mailto:fboschman@hotmail.com"
-            className="link-underline mt-10 inline-block font-display text-xl tracking-[-0.01em] md:text-3xl"
+            className="mt-10 inline-block font-display text-xl tracking-[-0.01em] underline decoration-ink/25 decoration-2 underline-offset-8 transition-colors hover:text-signal hover:decoration-signal md:text-3xl"
           >
             fboschman@hotmail.com
           </a>
@@ -417,14 +442,14 @@ function App() {
             not fit a funding call.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {LINKS.map(({ href, label, Icon }) => (
               <a
                 key={label}
                 href={href}
                 target={href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                className="label inline-flex items-center gap-2.5 border border-ink/25 px-5 py-3.5 transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+                className="label flex w-full items-center gap-2.5 border border-ink/25 px-5 py-3.5 transition-colors hover:border-ink hover:bg-ink hover:text-paper sm:inline-flex sm:w-auto"
               >
                 <Icon size={14} aria-hidden />
                 {label}
@@ -440,8 +465,7 @@ function App() {
           <p className="label text-ink-faint">
             © 2026 Ferry Boschman · Lectoraat Urban Innovation, Windesheim
           </p>
-          <p className="label text-ink-faint">Substrate — a research practice</p>
-          <p className="label text-ink-faint">React · Tailwind · no trackers</p>
+          <p className="label text-ink-faint">Substrate · React · Tailwind · no trackers</p>
         </div>
       </footer>
     </div>

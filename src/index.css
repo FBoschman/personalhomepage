@@ -52,6 +52,11 @@
     outline: 2px solid var(--color-signal);
     outline-offset: 3px;
   }
+
+  /* Keep section headings clear of the sticky masthead */
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
 }
 
 @layer utilities {
@@ -62,16 +67,18 @@
     text-transform: uppercase;
   }
 
+  /* Red rule that grows in on hover — used for navigation */
   .link-underline {
-    background-image: linear-gradient(currentColor, currentColor);
-    background-size: 100% 1px;
+    background-image: linear-gradient(var(--color-signal), var(--color-signal));
+    background-size: 0 1px;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 200ms ease;
+    transition: background-size 220ms ease;
   }
 
-  .link-underline:hover {
-    background-size: 0 1px;
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
   }
 
   .pause-on-hover:hover {
