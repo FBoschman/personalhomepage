@@ -44,6 +44,19 @@ npm run build
 npm run preview
 ```
 
+## Henry VIII Atlas
+
+A standalone Next.js + Tailwind CSS interactive map and timeline of Henry
+VIII's reign lives in [`henry-viii/`](henry-viii/README.md). It has its own
+`package.json`, build pipeline and map data, and does not affect the Vite
+portfolio in this directory.
+
+```bash
+cd henry-viii
+npm install
+npm run dev
+```
+
 ## Project Structure
 
 ```
