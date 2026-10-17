@@ -95,7 +95,7 @@ export function MapCard({
         </div>
       </div>
 
-      <div className="relative h-[clamp(330px,46vh,530px)] w-full overflow-hidden border-y border-white/[0.06] bg-[#081117] lg:h-[clamp(300px,42vh,490px)] xl:h-[clamp(330px,46vh,530px)]">
+      <div className="atlas-map-frame relative w-full overflow-hidden border-y border-white/[0.06] bg-[#081117]">
         <KingdomMap
           year={year}
           selected={selected}
