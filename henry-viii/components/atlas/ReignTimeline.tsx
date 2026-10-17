@@ -94,6 +94,12 @@ export function ReignTimeline({
         })}
       </div>
 
+      {filter !== "all" ? (
+        <p className="mt-2 text-[9px] uppercase tracking-[0.14em] text-muted/50">
+          Showing {visible.length} of {EVENTS.length} moments
+        </p>
+      ) : null}
+
       <div className="mt-7">
         {ERAS.map((era) => {
           const events = visible.filter((event) => event.era === era.id);

@@ -1,3 +1,5 @@
+import { fileURLToPath } from "node:url";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,7 +7,7 @@ const nextConfig = {
     unoptimized: true,
   },
   turbopack: {
-    root: import.meta.dirname,
+    root: fileURLToPath(new URL(".", import.meta.url)),
   },
 };
 

@@ -52,7 +52,7 @@ export function Legacy() {
             </span>
           </>
         }
-        intro="The king is remembered for his marriages, but his reign also redrew the legal map of the islands, transferred a quarter of England's land wealth and turned the Church into an arm of the state."
+        intro="The king is remembered for his marriages, but his reign also redrew the legal map of the islands, moved a vast share of England's land and wealth and turned the Church into an arm of the state."
         aside={
           <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-muted/60">
             <span className="h-1.5 w-1.5 rotate-45 bg-gold" />

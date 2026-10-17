@@ -61,7 +61,7 @@ export function MapCard({
               {era.name}
             </span>
           </div>
-          <p className="mt-1.5 min-h-[28px] max-w-md text-[11px] leading-5 text-muted">
+          <p className="mt-1.5 min-h-[28px] max-w-md text-[11px] leading-5 text-muted line-clamp-2">
             {moment}
           </p>
           <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-gold/60">
@@ -95,7 +95,7 @@ export function MapCard({
         </div>
       </div>
 
-      <div className="relative h-[clamp(330px,48vh,530px)] w-full overflow-hidden border-y border-white/[0.06] bg-[#081117]">
+      <div className="relative h-[clamp(330px,46vh,530px)] w-full overflow-hidden border-y border-white/[0.06] bg-[#081117] lg:h-[clamp(300px,42vh,490px)] xl:h-[clamp(330px,46vh,530px)]">
         <KingdomMap
           year={year}
           selected={selected}
@@ -109,7 +109,7 @@ export function MapCard({
         </div>
       </div>
 
-      <div className="px-5 py-2.5">
+      <div className="min-h-[58px] px-5 py-2.5">
         {selectedState ? (
           <div className="flex items-start gap-3">
             <span
@@ -121,7 +121,7 @@ export function MapCard({
                 {selectedState.name}
                 <span className="text-muted"> · {selectedState.status}</span>
               </p>
-              <p className="mt-1 text-[11px] leading-5 text-muted">
+              <p className="mt-1 line-clamp-2 text-[11px] leading-5 text-muted">
                 {selectedState.note}
               </p>
             </div>

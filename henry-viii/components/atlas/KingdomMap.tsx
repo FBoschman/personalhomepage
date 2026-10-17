@@ -67,7 +67,7 @@ export function KingdomMap({
       viewBox={`0 0 ${ATLAS.width} ${ATLAS.height}`}
       className="h-full w-full"
       preserveAspectRatio="xMidYMid meet"
-      role="img"
+      role="group"
       aria-labelledby={`${uid}-map-title ${uid}-map-desc`}
     >
       <title id={`${uid}-map-title`}>

@@ -22,6 +22,8 @@ occupations of Tournai and Boulogne, and the Pale of Calais.
 
 ## Run locally
 
+Requires Node.js 20.9 or newer.
+
 ```bash
 cd henry-viii
 npm install

@@ -90,7 +90,7 @@ export function ThreeMoments() {
                 {moment.notes.map((note) => (
                   <span
                     key={note}
-                    className="border border-gold/15 bg-gold/[0.04] px-2 py-1 text-[8.5px] uppercase tracking-[0.1em] text-parchment-dim/80"
+                    className="border border-gold/15 bg-gold/[0.04] px-2 py-1 text-[9.5px] uppercase tracking-[0.1em] text-parchment-dim/80"
                   >
                     {note}
                   </span>

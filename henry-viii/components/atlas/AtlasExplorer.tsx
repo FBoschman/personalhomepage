@@ -103,7 +103,7 @@ export function AtlasExplorer() {
       />
 
       <div className="mt-8 grid items-start gap-8 lg:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] lg:gap-10">
-        <div id="map" className="scroll-mt-24 lg:sticky lg:top-20">
+        <div id="map" className="scroll-mt-24 lg:sticky lg:top-[4.5rem]">
           <MapCard
             year={year}
             playing={playing}
